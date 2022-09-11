@@ -30,7 +30,7 @@ function ContentItem({
           justifyContent: 'center',
           alignItems: 'flex-start',
           paddingLeft: { xs: 2, md: 0 },
-          marginBottom: { xs: 2, md: 0 },
+          marginY: { xs: 2, md: 0 },
         }}
       >
         <Typography variant="h3" color="white">
