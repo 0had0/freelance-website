@@ -1,0 +1,12 @@
+[
+  {
+    "source": "/static/images/avatar/3.jpg",
+    "name": "Cindy Baker",
+    "description": "Phd. Student at some university"
+  },
+  {
+    "source": "/static/images/avatar/2.jpg",
+    "name": "Travis Howard",
+    "description": "Phd. Student at some university"
+  }
+]

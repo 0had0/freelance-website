@@ -1,0 +1,56 @@
+[
+  {
+    "id": 0,
+    "firstTitle": "1400 ق.م.",
+    "firstDescription": "قرن الرابع عشر قبل الميلاد",
+    "secondTitle": "ذروة أزدهار مدينة أوغاريت الكنعانية",
+    "secondDescription": "",
+    "separator": "",
+    "direction": ""
+  },
+  {
+    "id": 1,
+    "firstTitle": "1200 ق.م.",
+    "firstDescription": "القرن الثاني عشر قبل الميلاد",
+    "secondTitle": "اخترع الفينيقيون الأبجدية و الأرجوان الصوري الذي كان من المكونات الرئيسيًة لتجارتهم",
+    "secondDescription": "",
+    "separator": "",
+    "direction": ""
+  },
+  {
+    "id": 2,
+    "firstTitle": "",
+    "firstDescription": "",
+    "secondTitle": "أدت أزمة إلى انهيار العصر البرونزي. تم إنهيار مدن في جميع أنحاء شرق البحر الأبيض المتوسط في غضون بضعة عقود من قبل غزات متنوعين",
+    "secondDescription": "",
+    "separator": "",
+    "direction": "left"
+  },
+  {
+    "id": 3,
+    "firstTitle": "842 ق.م.",
+    "firstDescription": "القرن التاسع قبل الميلاد",
+    "secondTitle": "شلمنصر الثالث يدمر أراضي دمشق . سكان فلسطين والمدن الفينيقية يدفعون الجزية له",
+    "secondDescription": "",
+    "separator": "",
+    "direction": "right"
+  },
+  {
+    "id": 4,
+    "firstTitle": "",
+    "firstDescription": "",
+    "secondTitle": "تأسست قرطاج على يد الفينيقيين على ساحل شمالي أفريقيا",
+    "secondDescription": "",
+    "separator": "",
+    "direction": "right"
+  },
+  {
+    "id": 5,
+    "firstTitle": "1400 ق.م.",
+    "firstDescription": "قرن الرابع عشر قبل الميلاد",
+    "secondTitle": "ذروة أزدهار مدينة أوغاريت الكنعانية",
+    "secondDescription": "",
+    "separator": "",
+    "direction": ""
+  }
+]
