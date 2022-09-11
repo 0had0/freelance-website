@@ -16,31 +16,11 @@ function ContentItem({
         width: '100%',
         display: 'flex',
         height: 400,
-        padding: 3,
-        flexDirection: {
-          xm: 'column',
-          sm: 'column',
-          md: reverse('row', direction),
-          lg: reverse('row', direction),
-        },
+        paddingX: { xs: 0, md: 3 },
+        marginY: 3,
+        flexDirection: { xs: 'column', md: reverse('row', direction) },
       }}
     >
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          zIndex: 0,
-          height: 400,
-          width: 'auto',
-          overflow: 'hidden',
-          opacity: 0.8,
-          filter: 'blur(2px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      />
       <Box
         sx={{
           zIndex: 2,
@@ -49,7 +29,8 @@ function ContentItem({
           flex: 1,
           justifyContent: 'center',
           alignItems: 'flex-start',
-          paddingLeft: 2,
+          paddingLeft: { xs: 2, md: 0 },
+          marginBottom: { xs: 2, md: 0 },
         }}
       >
         <Typography variant="h3" color="white">
@@ -77,11 +58,16 @@ function ContentItem({
             paddingX: 1,
             backgroundColor: darken(theme.palette.primary.main, 0.5),
             borderRadius: 2,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: { xs: 'auto', md: 315 },
+            width: { xs: '90%', md: 560 },
           }}
         >
           <iframe
-            width="560"
-            height="315"
+            width="100%"
+            height="100%"
             src={`https://www.youtube.com/embed/${source.split('?v=')[1]}`}
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

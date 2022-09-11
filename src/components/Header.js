@@ -60,9 +60,14 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page, index) => (
+                <MenuItem
+                  as={Link}
+                  to={links[index]}
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                >
+                  <Typography textAlign="center" color="primary">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -85,9 +90,9 @@ function ResponsiveAppBar() {
               >
                 <span
                   className={
-                  location.pathname === links[index]
-                    ? 'sketch-highlight-subtitle'
-                    : ''
+                    location.pathname === links[index]
+                      ? 'sketch-highlight-subtitle'
+                      : ''
                   }
                 >
                   {page}

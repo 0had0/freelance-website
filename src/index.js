@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import './index.css';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: { main: '#a1bee1' },
     secondary: { main: '#3C4856' },
@@ -27,6 +27,8 @@ const theme = createTheme({
     },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

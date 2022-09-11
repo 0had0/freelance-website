@@ -19,14 +19,15 @@ function About() {
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'center',
         position: 'relative',
         backgroundColor: theme.palette.secondary.main,
         overflowY: 'auto',
         overflowX: 'hidden',
       }}
     >
-      <Container sx={{
-        height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 2 / 3,
+      <Box sx={{
+        height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 2 / 3, maxHeight: '400px', maxWidth: '400px',
       }}
       >
         {DATA.map(({ source, name, description }) => (
@@ -36,8 +37,11 @@ function About() {
             description={description}
           />
         ))}
-      </Container>
-      <Container sx={{ flex: 1 / 3 }}>
+      </Box>
+      <Container sx={{
+        flex: 1 / 3, display: 'flex', alignItems: 'center', justifyContent: 'center',
+      }}
+      >
         <Typography>
           {ABOUT_STRINGS.about}
         </Typography>

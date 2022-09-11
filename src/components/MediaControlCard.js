@@ -28,7 +28,7 @@ function MediaControlCard({
       sx={{
         display: 'flex',
         backgroundColor: theme.palette.secondary.main,
-        width: '26%',
+        maxWidth: '275px',
         padding: 2,
         paddingTop: 2,
         borderWidth: 6,
