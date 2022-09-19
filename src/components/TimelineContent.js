@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 import {
-  Typography,
+  Typography, useTheme,
 } from '@mui/material';
 
 import TimelineItem from '@mui/lab/TimelineItem';
@@ -10,25 +10,44 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import MuiTimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+import { useCallback, useState } from 'react';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 function TimelineContent({
-  firstTitle,
-  firstDescription,
-  secondTitle,
-  secondDescription,
+  // eslint-disable-next-line no-unused-vars
+  id,
+  title,
+  description,
   separator,
   direction,
 }) {
+  const theme = useTheme();
+
+  const [opacity, setOpacity] = useState(0);
+  const onIntersect = useCallback((isIntersecting) => { setOpacity(+isIntersecting); }, []);
+
+  const ref = useIntersectionObserver(onIntersect);
+
+  const [first, last] = title.split(' - ');
+
   return (
-    <TimelineItem position={direction}>
-      <TimelineOppositeContent
-        sx={{ m: 'auto 0' }}
-        align={direction}
-        variant="body2"
-        color="text.secondary"
-      >
-        {firstTitle}
-        <Typography>{firstDescription}</Typography>
+  // eslint-disable-next-line react/jsx-props-no-spreading
+    <TimelineItem ref={ref} position={direction} sx={{ minHeight: 'unset', opacity, transition: 'opacity ease 1000ms' }}>
+      <TimelineOppositeContent>
+        <img
+         // eslint-disable-next-line global-require,import/no-dynamic-require
+          src={require(`../assets/timeline-${id + 1}.jpeg`)}
+          style={{
+            borderStyle: 'solid',
+            borderWidth: 10,
+            borderRadius: 15,
+            borderColor: theme.palette.secondary.light,
+            minHeight: '275px',
+          }}
+          width="90%"
+          height="auto"
+          alt={title}
+        />
       </TimelineOppositeContent>
       <TimelineSeparator>
         <TimelineConnector />
@@ -37,28 +56,32 @@ function TimelineContent({
         </TimelineDot>
         <TimelineConnector />
       </TimelineSeparator>
-      <MuiTimelineContent sx={{ py: '12px', px: 2 }} position={direction}>
-        <Typography variant="h6" component="span">
-          {secondTitle}
+      <MuiTimelineContent
+        sx={{
+          py: '12px', px: 2, m: 'auto 0',
+        }}
+        dir="rtl"
+      >
+        <Typography variant="h4" component="span">
+          {first}
+          {' - '}
+          <span style={{ color: theme.palette.primary.main }}>{last}</span>
         </Typography>
-        <Typography>{secondDescription}</Typography>
+        <Typography variant="body1" fontSize={20} mt={3}>{description}</Typography>
       </MuiTimelineContent>
     </TimelineItem>
   );
 }
 
 TimelineContent.propTypes = {
-  firstTitle: PropTypes.string.isRequired,
-  firstDescription: PropTypes.string,
-  secondTitle: PropTypes.string.isRequired,
-  secondDescription: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   separator: PropTypes.elementType,
   direction: PropTypes.oneOf(['left', 'right']),
 };
 
 TimelineContent.defaultProps = {
-  firstDescription: '',
-  secondDescription: '',
   separator: null,
   direction: 'right',
 };

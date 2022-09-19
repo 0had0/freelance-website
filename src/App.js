@@ -11,6 +11,7 @@ import Timeline from './screens/Timeline';
 import Audio from './screens/Audio';
 
 import Header from './components/Header';
+import Video from './screens/Video';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/content" element={<Content />} />
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/podcast" element={<Audio />} />
+          <Route path="/video" element={<Video />} />
           <Route path="about" element={<About />} />
         </Routes>
       </Box>

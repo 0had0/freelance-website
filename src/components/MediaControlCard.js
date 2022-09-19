@@ -48,6 +48,7 @@ function MediaControlCard({
           justifyContent: 'center',
           width: '99%',
           height: '250px',
+          px: 15,
         }}
         >
           <AudioFileIcon sx={{ fontSize: 200, color: theme.palette.primary.main }} />
@@ -61,8 +62,9 @@ function MediaControlCard({
           </Typography>
         </Box>
         {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-        <audio id={`audio-${id}`} preload="auto">
-          <source src={source} />
+        <audio id={`audio-${id}`} preload="auto" type="audio/x-m4a">
+          {/* eslint-disable-next-line global-require,import/no-dynamic-require */}
+          <source src={require(`../assets/${source}`)} />
           Your browser does not support the
           <code>audio</code>
           element.

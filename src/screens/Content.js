@@ -26,30 +26,39 @@ function Content() {
       }}
     >
       <Box mt={4}>
+        {Boolean(CONTENT_STRINGS.header_title) && (
         <Typography
           variant="h2"
         >
           {CONTENT_STRINGS.header_title}
-            &nbsp;
-          <span className="sketch-highlight" style={{ borderColor: theme.palette.primary.main }}>{CONTENT_STRINGS.header_title_box}</span>
+              &nbsp;
+          <span
+            className="sketch-highlight"
+            style={{ borderColor: theme.palette.primary.main }}
+          >
+            {CONTENT_STRINGS.header_title_box}
+          </span>
         </Typography>
+        )}
+        {Boolean(CONTENT_STRINGS.header_subtitle) && (
         <Typography
           variant="subtitle"
           color="primary"
         >
           {CONTENT_STRINGS.header_subtitle}
         </Typography>
+        )}
       </Box>
       <Container sx={{ height: '88%' }}>
         {DATA.map(({
-          id,
           title,
           description,
           source,
           direction,
-        }) => (
+        }, index) => (
           <ContentItem
-            key={id}
+              // eslint-disable-next-line react/no-array-index-key
+            key={index}
             title={title}
             description={description}
             source={source}

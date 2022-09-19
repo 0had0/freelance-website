@@ -34,7 +34,7 @@ function Podcast() {
         <PodcastsTwoTone color="primary" fontSize="inherit" />
       </Typography>
 
-      <Typography color="primary" variant="subtitle1">
+      <Typography color="primary" variant="body1" fontSize={20} mt={3}>
         {PODCAST_STRINGS.header_subtitle}
       </Typography>
 

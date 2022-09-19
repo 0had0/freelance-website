@@ -45,22 +45,18 @@ function Timeline() {
       <Box mt={6} sx={{ height: '88%', display: 'flex', justifyContent: 'center' }}>
         <MUITimeline position="alternate" dir="ltr">
           {DATA.map(({
-            id,
-            firstTitle,
-            firstDescription,
-            secondTitle,
-            secondDescription,
+            title,
+            description,
             separator,
-            direction,
-          }) => (
+          }, index) => (
             <TimelineContent
-              key={id}
-              firstTitle={firstTitle}
-              firstDescription={firstDescription}
-              secondTitle={secondTitle}
-              secondDescription={secondDescription}
+                // eslint-disable-next-line react/no-array-index-key
+              key={index}
+              id={index}
+              title={title}
+              description={description}
               separator={separator}
-              direction={direction}
+              direction={index % 2 === 0 ? 'left' : 'right'}
             />
           ))}
         </MUITimeline>

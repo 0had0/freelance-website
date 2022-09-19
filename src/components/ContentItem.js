@@ -33,7 +33,7 @@ function ContentItem({
           marginY: { xs: 2, md: 0 },
         }}
       >
-        <Typography variant="h3" color="white">
+        <Typography variant="h3" color="white" sx={{ textAlign: 'start' }}>
           <span className="sketch-highlight-subtitle">
             {title}
           </span>

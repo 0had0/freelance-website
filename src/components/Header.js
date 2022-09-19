@@ -13,7 +13,7 @@ import { Link, useLocation } from 'react-router-dom';
 import STRINGS from '../constants/strings.json';
 
 const pages = STRINGS.Header.options;
-const links = ['/', '/content', '/timeline', '/podcast', '/about'];
+const links = ['/', '/timeline', '/video', '/content', '/podcast', '/about'];
 
 function ResponsiveAppBar() {
   const location = useLocation();
