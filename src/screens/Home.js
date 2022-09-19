@@ -1,11 +1,16 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import {
+  Box, Button, Typography, useTheme,
+} from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
+import { ArrowForward } from '@mui/icons-material';
 import STRINGS from '../constants/strings.json';
 
 const HOME_STRINGS = STRINGS.Home;
 
 function Home() {
   const theme = useTheme();
+  const navigate = useNavigate();
   return (
     <Box
       sx={{
@@ -37,7 +42,6 @@ function Home() {
         />
       </Box>
       <Box sx={{
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         display: 'flex',
@@ -46,14 +50,14 @@ function Home() {
       }}
       >
         <Box sx={{
-          flex: 1 / 4, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
         }}
         >
           <Typography variant="h1">{HOME_STRINGS.header_title}</Typography>
           <Typography variant="subtitle1" sx={{ marginTop: 3 }}>{HOME_STRINGS.header_subtitle}</Typography>
         </Box>
         <Box sx={{
-          maxWidth: '80%', maxHeight: '60%', flex: 3 / 4, overflowY: 'scroll',
+          maxWidth: '80%', maxHeight: '60%', overflowY: 'auto',
         }}
         >
           <Box sx={{ position: 'relative', padding: 1 }}>
@@ -63,6 +67,22 @@ function Home() {
             />
             <Typography sx={{ zIndex: 3, textAlign: 'right' }} variant="body1">{HOME_STRINGS.header_description}</Typography>
           </Box>
+        </Box>
+        <Box dir="ltr">
+          <Button
+            onClick={() => navigate('/timeline')}
+            variant="outlined"
+            color="primary"
+            endIcon={<ArrowForward />}
+            size="large"
+            sx={{
+              marginY: 4, color: '#fff', borderColor: '#fff', '&:hover': { backgroundColor: '#fff', color: theme.palette.secondary.main },
+            }}
+            disableRipple
+            disableElevation
+          >
+            Start
+          </Button>
         </Box>
       </Box>
     </Box>

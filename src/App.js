@@ -12,6 +12,7 @@ import Audio from './screens/Audio';
 
 import Header from './components/Header';
 import Video from './screens/Video';
+import ContactUs from './screens/ContactUs';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/podcast" element={<Audio />} />
           <Route path="/video" element={<Video />} />
           <Route path="about" element={<About />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </Box>
     </div>
